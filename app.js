@@ -25,21 +25,17 @@ app.set('views', path.join(__dirname, 'views'))
 // Set static folder
 app.use(express.static(path.join(__dirname, 'static')))
 
-function generate_noun(noun) {
-    const count = noun.countDocuments()
-    const random = Math.floor(Math.random() * count)
-    return new Promise((resolve, reject) => {
-        noun.findOne().skip(random).then((result) => { resolve (result) })
-    })
-}
-
 // Routing
 app.get('/', (req, res) => res.render('index', { title: 'Home' } )
 )
 
 app.get('/noun-gender', function(req, res) {
-    // let nounToDisplay = generate_noun(Noun).then((result) => { return (result.noun) })
-    res.render('noun-gender', { title: 'Noun gender quiz', noun: nounToDisplay })
+    Noun.countDocuments().exec((err, count) => {
+        const random = Math.floor(Math.random() * count)
+        Noun.findOne().skip(random).exec((e, nouns) => {
+            res.render('noun-gender', {title: 'Noun gender quiz', noun: nouns.noun})
+        })
+    })
 })
 
 // Run server

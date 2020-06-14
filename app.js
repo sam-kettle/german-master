@@ -26,26 +26,20 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(path.join(__dirname, 'static')))
 
 function generate_noun(noun) {
-    Noun.countDocuments().exec(function(err, count){
-        const random = Math.floor(Math.random() * count);
-        Noun.findOne().skip(random).exec(
-            function (err, result) {
-                if (err) {
-                    console.log("Didn't work...")
-                } else {
-                    console.log(result)
-                }
-            });
-    });
+    const count = noun.countDocuments()
+    const random = Math.floor(Math.random() * count)
+    return new Promise((resolve, reject) => {
+        noun.findOne().skip(random).then((result) => { resolve (result) })
+    })
 }
-console.log(generate_noun(Noun))
 
 // Routing
 app.get('/', (req, res) => res.render('index', { title: 'Home' } )
 )
 
 app.get('/noun-gender', function(req, res) {
-    res.render('noun-gender', { title: 'Noun gender quiz', noun: 'Katze' })
+    // let nounToDisplay = generate_noun(Noun).then((result) => { return (result.noun) })
+    res.render('noun-gender', { title: 'Noun gender quiz', noun: nounToDisplay })
 })
 
 // Run server

@@ -47,8 +47,10 @@ app.post('/noun-gender', (req, res) => {
     Noun.findOne({ noun: req.body.currentnoun }).exec((e, result) => {
         if (result.gender === req.body.userinput) {
             console.log('Correct!')
+            res.redirect('/noun-gender')
         } else {
             console.log('Incorrect')
+            res.redirect('/noun-gender')
         }
     })
 })

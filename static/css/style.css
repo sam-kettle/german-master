@@ -29,14 +29,16 @@ footer {
     align-items: center;
 }
 
-#noun-gender-form button {
+#noun-gender-form input[type=submit] {
     height: 30px;
     width: 60px;
+    font-size: 0.8rem;
 }
 #noun-gender-form input {
     height: 30px;
     width: 60px;
-    font-size: 1.1em;
+    padding: 0;
+    font-size: 1em;
     text-align: center;
 }
 

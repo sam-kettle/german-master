@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 
 // Initialise app
 const app = express()
@@ -22,6 +23,10 @@ app.set('views', )
 app.set('view engine', 'pug')
 app.set('views', path.join(__dirname, 'views'))
 
+// body-parser config
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 // Set static folder
 app.use(express.static(path.join(__dirname, 'static')))
 
@@ -35,6 +40,16 @@ app.get('/noun-gender', function(req, res) {
         Noun.findOne().skip(random).exec((e, nouns) => {
             res.render('noun-gender', {title: 'Noun gender quiz', noun: nouns.noun})
         })
+    })
+})
+
+app.post('/noun-gender', (req, res) => {
+    Noun.findOne({ noun: req.body.currentnoun }).exec((e, result) => {
+        if (result.gender === req.body.userinput) {
+            console.log('Correct!')
+        } else {
+            console.log('Incorrect')
+        }
     })
 })
 

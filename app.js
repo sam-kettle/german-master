@@ -46,11 +46,17 @@ app.get('/noun-gender', function(req, res) {
 app.post('/noun-gender', (req, res) => {
     Noun.findOne({ noun: req.body.currentnoun }).exec((e, result) => {
         if (result.gender === req.body.userinput) {
-            console.log('Correct!')
-            res.redirect('/noun-gender')
+            res.render('noun-gender', {
+                title: 'Noun gender quiz',
+                noun: req.body.currentnoun,
+                answer: 'Correct!'
+            })
         } else {
-            console.log('Incorrect')
-            res.redirect('/noun-gender')
+            res.render('noun-gender', {
+                title: 'Noun gender quiz',
+                noun: req.body.currentnoun,
+                answer: 'Incorrect'
+            })
         }
     })
 })

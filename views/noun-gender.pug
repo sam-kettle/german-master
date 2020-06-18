@@ -8,8 +8,11 @@ block content
             the genders of the nouns below? Type #[strong das] (neuter), #[strong die] (feminine)
             or #[strong der] (masculine) in the box. #[br] #[br]
             Your score will be tallied at the bottom. #[br] #[br] #[hr]
+    .quiz-area
         form(id='noun-gender-form' action='/noun-gender' method='POST' autocomplete='off' )
             input(name='userinput' maxlength='3' data-lpignore="true")
             h2(id='random-noun') #{noun}
             input(type='hidden' name='currentnoun' value='' id='currentnoun')
             input(type='submit' value='Submit')
+        .answer-popup
+            h2(id='answer-popup-text') #{answer}

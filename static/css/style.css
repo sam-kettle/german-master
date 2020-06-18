@@ -32,13 +32,13 @@ footer {
 #noun-gender-form input[type=submit] {
     height: 30px;
     width: 60px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 #noun-gender-form input {
     height: 30px;
     width: 60px;
     padding: 0;
-    font-size: 1em;
+    font-size: 1.1em;
     text-align: center;
 }
 
@@ -119,5 +119,24 @@ footer {
     background-color: #ffe15a;
     color: #242424;
     border: 2px solid #ad993d;
+}
+
+.quiz-area {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.answer-popup {
+    text-align: center;
+    width: 50%;
+    margin: 8% auto;
+}
+
+.correct {
+    color: #2c9147;
+}
+
+.incorrect {
+    color: #c75656;
 }
 

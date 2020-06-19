@@ -109,6 +109,12 @@ footer {
     border-radius: 1em;
 }
 
+.translation {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .button-1 {
     background-color: #464655;
     color: aliceblue;
@@ -161,4 +167,3 @@ footer {
 .hidden {
     display: none;
 }
-

@@ -11,7 +11,7 @@ async function generateNewNoun(nounSchema) {
 
 router.get('/', function(req, res) {
     generateNewNoun(Noun).then(r => {
-        res.render('noun-gender', {title: 'Noun gender quiz', noun: r.noun})
+        res.render('noun-gender', {title: 'Noun gender quiz', noun: r.noun, translation: r.translation})
     })
 })
 
@@ -22,13 +22,16 @@ router.post('/', (req, res) => {
                 res.render('noun-gender', {
                     title: 'Noun gender quiz',
                     noun: r.noun,
+                    translation: r.translation,
                     answer: 'Correct!'
                 })
             })
         } else {
+            console.log(req.body)
             res.render('noun-gender', {
                 title: 'Noun gender quiz',
                 noun: req.body.currentnoun,
+                translation: req.body.translation,
                 answer: 'Incorrect'
             })
         }

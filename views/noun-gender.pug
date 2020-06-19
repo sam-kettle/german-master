@@ -9,9 +9,12 @@ block content
             or #[strong der] (masculine) in the box. #[br] #[br] #[hr]
     .quiz-area
         form(id='noun-gender-form' action='/noun-gender' method='POST' autocomplete='off' )
-            input(name='userinput' maxlength='3' data-lpignore="true")
+            input(name='userinput' maxlength='3' data-lpignore="true" autofocus='autofocus')
             h2(id='random-noun') #{noun}
             input(type='hidden' name='currentnoun' value='' id='currentnoun')
+            input(type='hidden' name='translation' value='' id='translation')
             input(type='submit' value='Submit')
+        .translation
+            p(id='translation-text') #{translation}
         .answer-popup
             h2(id='answer-popup-text') #{answer}

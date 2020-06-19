@@ -7,3 +7,8 @@ if (answerPopupText.textContent === 'Correct!') {
 } else {
     answerPopupText.classList.add('incorrect')
 }
+
+setTimeout(() => {
+    const popup = document.querySelector('#answer-popup-text')
+    popup.classList.add('hidden')
+}, 1000)

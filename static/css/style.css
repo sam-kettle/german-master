@@ -140,3 +140,7 @@ footer {
     color: #c75656;
 }
 
+.hidden {
+    display: none;
+}
+

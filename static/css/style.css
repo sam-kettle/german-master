@@ -6,6 +6,10 @@ p, a, button {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 nav {
     width: 75%;
     margin: 0 auto;
@@ -49,6 +53,11 @@ footer {
 .logo h1 {
     margin: 0;
     padding-top: 10px;
+}
+
+.logo a {
+    font-family: 'Bitter', sans-serif;
+    color: black;
 }
 
 .logo img {

@@ -3,12 +3,12 @@ const path = require('path')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
+// Load route modules
+const nounGenderRouter = require('./routes/noun-gender')
+
 // Initialise app
 const app = express()
 const port = 3000
-
-// Load models
-const Noun = require('./models/noun')
 
 // Mongoose set-up
 mongoose.connect('mongodb://localhost/germanmasterdb', {useNewUrlParser: true, useUnifiedTopology: true} )
@@ -30,36 +30,11 @@ app.use(bodyParser.json())
 // Set static folder
 app.use(express.static(path.join(__dirname, 'static')))
 
-// Routing
+// Routes
+app.use('/noun-gender', nounGenderRouter)
+
 app.get('/', (req, res) => res.render('index', { title: 'Home' } )
 )
-
-app.get('/noun-gender', function(req, res) {
-    Noun.countDocuments().exec((err, count) => {
-        const random = Math.floor(Math.random() * count)
-        Noun.findOne().skip(random).exec((e, nouns) => {
-            res.render('noun-gender', {title: 'Noun gender quiz', noun: nouns.noun})
-        })
-    })
-})
-
-app.post('/noun-gender', (req, res) => {
-    Noun.findOne({ noun: req.body.currentnoun }).exec((e, result) => {
-        if (result.gender === req.body.userinput) {
-            res.render('noun-gender', {
-                title: 'Noun gender quiz',
-                noun: req.body.currentnoun,
-                answer: 'Correct!'
-            })
-        } else {
-            res.render('noun-gender', {
-                title: 'Noun gender quiz',
-                noun: req.body.currentnoun,
-                answer: 'Incorrect'
-            })
-        }
-    })
-})
 
 // Run server
 app.listen(port, () => console.log(`Server is running on port: ${port}`))

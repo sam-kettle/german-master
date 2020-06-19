@@ -27,7 +27,6 @@ router.post('/', (req, res) => {
                 })
             })
         } else {
-            console.log(req.body)
             res.render('noun-gender', {
                 title: 'Noun gender quiz',
                 noun: req.body.currentnoun,

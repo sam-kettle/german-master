@@ -1,7 +1,7 @@
 # German Master
 ![in-progress](https://img.shields.io/badge/status-in%20progress-yellow)
 
-**An online site to improve German grammar and comprehension.**
+**An node.js/express powered app to improve German grammar and comprehension.**
 
 
 ## Functionality
@@ -9,6 +9,8 @@
 
 
 ## To Do  
-- [x] Create noun gender quiz page
-- [ ] Create noun translation quiz page
-- [ ] Create verb translation quiz page
+- [x] Create noun gender quiz page prototype
+    - [ ] Add 'streak' functionality
+    - [ ] Improve UI & styling
+- [ ] Create noun translation quiz page prototype
+- [ ] Create verb translation quiz page prototype

@@ -15,3 +15,4 @@
     - [ ] Create option to add new nouns to database
 - [ ] Create noun translation quiz page prototype
 - [ ] Create verb translation quiz page prototype
+- [ ] Populate database with full word data

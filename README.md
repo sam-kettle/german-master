@@ -12,5 +12,6 @@
 - [x] Create noun gender quiz page prototype
     - [ ] Add 'streak' functionality
     - [ ] Improve UI & styling
+    - [ ] Create option to add new nouns to database
 - [ ] Create noun translation quiz page prototype
 - [ ] Create verb translation quiz page prototype

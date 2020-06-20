@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 // Load route modules
 const nounGenderRouter = require('./routes/noun-gender')
+const nounTranslationRouter = require('./routes/noun-translation')
 
 // Initialise app
 const app = express()
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'static')))
 
 // Routes
 app.use('/noun-gender', nounGenderRouter)
+app.use('/noun-translation', nounTranslationRouter)
 
 app.get('/', (req, res) => res.render('index', { title: 'Home' } )
 )

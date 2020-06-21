@@ -7,7 +7,6 @@
 ## Functionality
 - Quiz for German noun genders (der, die, das) that compares user input to correct gender.  
 
-
 ## To Do  
 - [x] Create noun gender quiz page prototype
     - [ ] Add 'streak' functionality
@@ -16,3 +15,8 @@
 - [ ] Create noun translation quiz page prototype
 - [ ] Create verb translation quiz page prototype
 - [ ] Populate database with full word data
+
+## Potential Future Features
+- [ ] Simple authentication
+- [ ] Basic user profile - top streak data, about me
+- [ ] German grammar lessons (static pages)

@@ -9,8 +9,10 @@ block content
             #[br] #[br] #[hr]
     .quiz-area
         form(id='noun-translation-form' action='/noun-translation' method='POST' autocomplete='off')
-            input(name='userinput' data-lpignore="true" autofocus='autofocus')
             h2(id='random-noun') #{noun}
+            input(name='userinput' data-lpignore="true" autofocus='autofocus')
             input(type='hidden' name='currentnoun' value='' id='currentnoun')
             input(type='hidden' name='translation' value='' id='translation')
             input(type='submit' value='Submit')
+    .answer-popup
+        h2(id='answer-popup-text') #{answer}

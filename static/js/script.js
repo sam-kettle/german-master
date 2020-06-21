@@ -1,8 +1,10 @@
 let displayedNoun = document.getElementById('random-noun').textContent
 document.getElementById('currentnoun').value = displayedNoun
 
-let translation = document.querySelector('#translation-text').textContent
-document.querySelector('#translation').value = translation
+if (document.URL.includes('noun-gender')) {
+    let translation = document.querySelector('#translation-text').textContent
+    document.querySelector('#translation').value = translation
+}
 
 const answerPopupText = document.getElementById('answer-popup-text')
 if (answerPopupText.textContent === 'Correct!') {

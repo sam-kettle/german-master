@@ -1,6 +1,5 @@
 const express = require('express')
 const Noun = require('../models/noun')
-const functions = require('./function')
 const { generateNewNoun } = require('./function')
 const router = express.Router()
 

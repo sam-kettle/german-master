@@ -1,0 +1,14 @@
+extends layout
+block content
+    .header 
+        h1 Verb translation quiz
+        p.
+            It's time to drill those common verbs into your memory once and for all.
+            Currently this quiz uses #[strong verb infinitives] (i.e, to go, to see, to watch)
+            without their conjugated forms. Simply choose your mode (German > English or English > German)
+            and type your translation below.
+        select(name='mode' id='noun-translation-mode' onchange='getSelectedValue()')
+            option(value='') -- Please choose a mode --
+            option(value='german-to-english') German to English
+            option(value='english-to-german') English to German
+        p #[hr]

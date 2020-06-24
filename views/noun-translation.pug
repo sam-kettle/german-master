@@ -6,7 +6,15 @@ block content
             Struggling to remember translations? This quiz will test your
             knowledge of the 2000 most common German nouns. Choose either #[strong English -> German]
             or #[strong German -> English] mode, and type the translation in.
-            #[br] #[br] #[hr]
+            #[br] #[br]
+        h2 Select mode:
+        form(action="/noun-translation" method='POST')
+            select(name='mode' id='noun-translation-mode')
+                option(value='') -- Please choose a mode --
+                option(value='german-to-english') German to English
+                option(value='english-to-german') English to German
+            input(type='submit' value='Submit')
+        p #[hr]
     .quiz-area
         form(id='noun-translation-form' action='/noun-translation' method='POST' autocomplete='off')
             h2(id='random-noun') #{noun}
